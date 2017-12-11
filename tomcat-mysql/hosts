@@ -1,0 +1,11 @@
+
+[tomcat-servers]
+10.4.56.70  ansible_connection=ssh  ansible_user=root   ansible_ssh_pass='password'
+10.4.56.71  ansible_connection=ssh  ansible_user=root   ansible_ssh_pass='password'
+10.4.56.72  ansible_connection=ssh  ansible_user=root   ansible_ssh_pass='password'
+10.4.56.73  ansible_connection=ssh  ansible_user=root   ansible_ssh_pass='password'
+10.4.56.74  ansible_connection=ssh  ansible_user=root   ansible_ssh_pass='password'
+10.4.56.75  ansible_connection=ssh  ansible_user=root   ansible_ssh_pass='password'
+10.4.56.76  ansible_connection=ssh  ansible_user=root   ansible_ssh_pass='password'
+10.4.56.77  ansible_connection=ssh  ansible_user=root   ansible_ssh_pass='password'
+10.4.56.78  ansible_connection=ssh  ansible_user=root   ansible_ssh_pass='password'

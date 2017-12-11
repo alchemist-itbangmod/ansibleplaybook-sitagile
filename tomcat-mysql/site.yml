@@ -1,0 +1,12 @@
+---
+- name: Install Tomcat, MySQL
+  hosts: tomcat-servers
+  remote_user: root
+  # remote_user: user
+  # sudo: yes
+
+  roles:
+    - common
+    - tomcat
+    - mariadb
+    - maven

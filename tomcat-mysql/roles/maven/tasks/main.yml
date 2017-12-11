@@ -1,0 +1,23 @@
+---
+- name: Download Marven Archive
+  get_url: url=https://secure.chakree.me/tmp/agile/apache-maven-3.5.2-bin.tar.gz  dest=/tmp/apache-maven-3.5.2-bin.tar.gz
+
+- name: Extract archive
+  command: chdir=/opt/ /bin/tar xvf /tmp/apache-maven-3.5.2-bin.tar.gz -C /opt/
+
+- name: Delete Existing Marven Folder
+  command: rm -rf /opt/apache-maven
+
+- name: Move Marven Folder
+  command: chdir=/opt mv apache-maven-3.5.2 apache-maven
+
+- name: Change ownership of Maven installation
+  file: path=/opt/apache-maven owner=tomcat group=tomcat state=directory recurse=yes
+
+- name: Install Maven Credential to Tomcat configuration
+  copy: src=settings.xml dest=/opt/apache-maven/conf/settings.xml mode=0755
+
+- name: Append Add Marven Path To Environment
+  lineinfile:
+    dest: /etc/environment
+    line: "PATH=/opt/apache-maven/bin:/sbin:/bin:/usr/sbin:/usr/bin"
